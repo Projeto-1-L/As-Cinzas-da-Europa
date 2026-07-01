@@ -4,21 +4,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>As Cinzas da Europa</title>
+    
+    <style>
+        /* Importando as fontes do Google Fonts: Roboto para os textos e Cinzel para os títulos */
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght=500;700&family=Roboto:wght=300;400;700&display=swap');
 
-    <link rel="stylesheet" href="style.css">
+        /* Variáveis de Cores e Fontes */
+        :root {
+            --cor-fundo: #121214;       /* Cinza escuro quase preto */
+            --cor-fundo-cartao: #1a1a1e;/* Cinza um pouco mais claro */
+            --cor-principal: #e1e1e6;   /* Branco fosco para os textos principais */
+            --cor-destaque: #e53e3e;    /* Vermelho fosco para detalhes importantes */
+            --cor-subtitulo: #a0aec0;   /* Cinza claro para subtítulos */
+            
+            --fonte-titulos: 'Cinzel', serif;
+            --fonte-textos: 'Roboto', sans-serif;
+        }
+
+        /* Reset básico para limpar as margens padrões */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+            color: var(--cor-principal);
+            font-family: var(--fonte-textos);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Estilização do Cabeçalho (Header) */
+        .cabecalho {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            border-bottom: 2px solid var(--cor-fundo-cartao);
+        }
+
+        .cabecalho__titulo {
+            font-family: var(--fonte-titulos);
+            font-size: 2.5rem;
+            color: var(--cor-destaque);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .cabecalho__subtitulo {
+            font-size: 1.1rem;
+            color: var(--cor-subtitulo);
+            margin-top: 10px;
+        }
+
+        /* Layout do Conteúdo Principal usando Flexbox */
+        .conteudo-principal {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 25px; 
+        }
+
+        /* Estilização dos blocos de conteúdo (Sections) */
+        .conteudo-principal__secao {
+            background-color: var(--cor-fundo-cartao);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid var(--cor-destaque); 
+            transition: transform 0.3s ease; 
+        }
+
+        /* Efeito de hover ao passar o mouse */
+        .conteudo-principal__secao:hover {
+            transform: translateY(-5px);
+        }
+
+        .secao__titulo {
+            font-family: var(--fonte-titulos);
+            font-size: 1.5rem;
+            color: var(--cor-principal);
+            margin-bottom: 12px;
+        }
+
+        .secao__texto {
+            font-size: 1rem;
+            color: var(--cor-principal);
+            text-align: justify;
+        }
+
+        /* Destaca as palavras com a tag <strong> */
+        .secao__texto strong {
+            color: var(--cor-destaque);
+        }
+
+        /* Estilização do Rodapé (Footer) */
+        .rodape {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid var(--cor-fundo-cartao);
+        }
+
+        .rodape__texto {
+            font-size: 0.9rem;
+            color: var(--cor-subtitulo);
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <h1>As Cinzas da Europa</h1>
-        <p>Os acontecimentos da Segunda Guerra Mundial</p>
+    <header class="cabecalho">
+        <h1 class="cabecalho__titulo">As Cinzas da Europa</h1>
+        <p class="cabecalho__subtitulo">Os acontecimentos da Segunda Guerra Mundial</p>
     </header>
 
-    <main>
-        <div id="evento"></div>
+    <main class="conteudo-principal">
+        
+        <section class="conteudo-principal__secao">
+            <h2 class="secao__titulo">O Início do Conflito</h2>
+            <p class="secao__texto">
+                A Segunda Guerra Mundial (1939–1945) foi o maior conflito armado da história da humanidade. Suas raízes estão ligadas ao desfecho da Primeira Guerra Mundial e à ascensão de regimes totalitários na Europa. O estopim ocorreu em 1º de setembro de 1939, quando a Alemanha invadiu a Polônia, forçando o Reino Unido e a França a declararem guerra.
+            </p>
+        </section>
+
+        <section class="conteudo-principal__secao">
+            <h2 class="secao__titulo">As Forças em Confronto</h2>
+            <p class="secao__texto">
+                O mundo se dividiu em dois grandes blocos militares: os <strong>Aliados</strong> (liderados principalmente por Reino Unido, União Soviética e Estados Unidos) e o <strong>Eixo</strong> (composto por Alemanha, Itália e Japão).
+            </p>
+        </section>
+
+        <section class="conteudo-principal__secao">
+            <h2 class="secao__titulo">O Desfecho e as Consequências</h2>
+            <p class="secao__texto">
+                Após anos de batalhas intensas na Europa, no Pacífico e no Norte da África, a guerra chegou ao fim em 1945. O conflito deixou marcas profundas, resultando na criação da ONU (Organização das Nações Unidas) e redesenhando o mapa geopolítico mundial.
+            </p>
+        </section>
+
     </main>
 
-    <script src="script.js"></script>
+    <footer class="rodape">
+        <p class="rodape__texto">Desenvolvido por Arthur Jesus, Arthur Ribeiro e Rafael Spejorim • Projeto de Educação Digital</p>
+    </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
