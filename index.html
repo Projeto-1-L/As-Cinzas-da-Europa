@@ -36,6 +36,13 @@
             padding: 20px;
         }
 
+
+button.curtido {
+    background-color: var(--cor-destaque);
+    color: #aed0d6;
+}
+
+
     
         .cabecalho {
             text-align: center;
@@ -155,13 +162,24 @@
         <p class="rodape__texto">Desenvolvido por Arthur Jesus, Arthur Ribeiro e Rafael Spejorim • Projeto de Educação Digital</p>
     </footer>
 
-    <script>
-        const botao = document.querySelector("button");
-botao.addEventListener("click", botaoClicado);
-function botaoClicado() {
-let texto = botao.querySelector("span");
-texto.textContent++;
-};
+   <script>
+    const botoes = document.querySelectorAll(".conteudo-principal__secao button");
+    botoes.forEach(botao => {
+        botao.addEventListener("click", function() {
+            const contador = this.querySelector("span");
+            let valorAtual = Number(contador.textContent);
+
+            if (this.classList.contains("curtido")) {
+                this.classList.remove("curtido");
+                contador.textContent = valorAtual - 1;
+            } else {
+                this.classList.add("curtido");
+                contador.textContent = valorAtual + 1;
+            }
+        });
+    });
+</script>
+
 </script>
 </body>
 </html>
