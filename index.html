@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -52,7 +52,7 @@ button.curtido {
             border-bottom: 2px solid var(--cor-fundo-cartao);
         }
 
-        .cabecalho__titulo {
+        .titulo {
             font-family: var(--fonte-titulos);
             font-size: 2.5rem;
             color: var(--cor-destaque);
@@ -60,14 +60,14 @@ button.curtido {
             letter-spacing: 2px;
         }
 
-        .cabecalho__subtitulo {
+        .subtitulo {
             font-size: 1.1rem;
             color: var(--cor-subtitulo);
             margin-top: 10px;
         }
 
     
-        .conteudo-principal {
+        .principal {
             max-width: 900px;
             margin: 0 auto;
             display: flex;
@@ -76,7 +76,7 @@ button.curtido {
         }
 
 
-        .conteudo-principal__secao {
+        .cont-principal {
             background-color: var(--cor-fundo-cartao);
             padding: 25px;
             border-radius: 8px;
@@ -84,18 +84,18 @@ button.curtido {
             transition: transform 0.3s ease; 
         }
 
-        .conteudo-principal__secao:hover {
+        .cont-principal:hover {
             transform: translateY(-5px);
         }
 
-        .secao__titulo {
+        .s__titulo {
             font-family: var(--fonte-titulos);
             font-size: 1.5rem;
             color: var(--cor-principal);
             margin-bottom: 12px;
         }
 
-        .secao__texto {
+        .s__texto {
             font-size: 1rem;
             color: var(--cor-principal);
             text-align: justify;
@@ -139,7 +139,7 @@ button.curtido {
         }
 
   
-        .secao__texto strong {
+        .se__texto strong {
             color: var(--cor-destaque);
         }
 
@@ -151,7 +151,7 @@ button.curtido {
             border-top: 1px solid var(--cor-fundo-cartao);
         }
 
-        .rodape__texto {
+        .r__texto {
             font-size: 0.9rem;
             color: var(--cor-subtitulo);
         }
@@ -160,42 +160,42 @@ button.curtido {
 <body>
 
     <header class="cabecalho">
-        <h1 class="cabecalho__titulo">As Cinzas da Europa</h1>
-        <p class="cabecalho__subtitulo">Os acontecimentos da Segunda Guerra Mundial</p>
+        <h1 class="titulo">As Cinzas da Europa</h1>
+        <p class="subtitulo">Os acontecimentos da Segunda Guerra Mundial</p>
     </header>
 
     <main class="conteudo-principal">
         
-        <section class="conteudo-principal__secao">
-            <h2 class="secao__titulo">O Início do Conflito</h2>
+        <section class="cont-principal">
+            <h2 class="s__titulo">O Início do Conflito</h2>
               <img src="https://static.historiadomundo.com.br/conteudo/images/hitler-sendo-recepcionado-pela-populacao-danzig-em-festa-em-19-setembro-1939-59d214f6b13d7.jpg" alt="Invasão Alemã a Polônia" width="600" height="400" style="max-width: 100%; height: auto;">
-            <p class="secao__texto">
+            <p class="s__texto">
                 A Segunda Guerra Mundial (1939–1945) foi o maior conflito armado da história da humanidade. Suas raízes estão ligadas ao desfecho da Primeira Guerra Mundial e à ascensão de regimes totalitários na Europa. O estopim ocorreu em 1º de setembro de 1939, quando a Alemanha invadiu a Polônia, forçando o Reino Unido e a França a declararem guerra.
             </p>
                <button>👍<span>0</span></button>
         </section>
 
-        <section class="conteudo-principal__secao">
-            <h2 class="secao__titulo">As Forças em Confronto</h2>
+        <section class="cont-principal">
+            <h2 class="s__titulo">As Forças em Confronto</h2>
               <img src="reuniao.png" alt="Três líderes do Eixo" width="600" height="400" style="max-width: 100%; height: auto;">
-           <h3 class="secao__titulo">Foto gerada com IA.</h3>
+           <h3 class="s__titulo">Foto gerada com IA.</h3>
             <p class="secao__texto">
                 O mundo se dividiu em dois grandes blocos militares: os <strong>Aliados</strong> (liderados principalmente por Reino Unido, União Soviética e Estados Unidos) e o <strong>Eixo</strong> (composto por Alemanha, Itália e Japão).
             </p>
            <button>👍<span>0</span></button>
         </section>
 
-        <section class="conteudo-principal__secao">
-            <h2 class="secao__titulo">O Desfecho e as Consequências</h2>
+        <section class="cont-principal">
+            <h2 class="s__titulo">O Desfecho e as Consequências</h2>
             <img src="https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/E0A1/production/_115550575_gettyimages-497496268.jpg" width="600" height="400" style="max-width: 100%; height: auto;">
-            <p class="secao__texto">
+            <p class="s__texto">
                 Após anos de batalhas intensas na Europa, no Pacífico e no Norte da África, a guerra chegou ao fim em 1945. O conflito deixou marcas profundas, resultando na criação da ONU (Organização das Nações Unidas) e redesenhando o mapa geopolítico mundial.
             </p>
                <button>👍<span>0</span></button>
         </section>
 
-             <section class="conteudo-principal__secao">
-            <h2 class="secao__titulo">Participação do brasil na Guerra</h2>
+             <section class="cont-principal">
+            <h2 class="s__titulo">Participação do brasil na Guerra</h2>
               <img src="brasil_guerra.jpg" alt="Soldados brasileiros" width="600" height="400" style="max-width: 100%; height: auto;">
                    <div class="player">
                 <audio id="Audio">
@@ -211,12 +211,12 @@ button.curtido {
 
     </main>
 
-    <footer class="rodape">
-        <p class="rodape__texto">Desenvolvido por Arthur Jesus, Arthur Ribeiro e Rafael Spejorim • Projeto de Educação Digital</p>
+    <footer class="r">
+        <p class="r__texto">Desenvolvido por Arthur Jesus, Arthur Ribeiro e Rafael Spejorim • Projeto de Educação Digital</p>
     </footer>
 
    <script>
-    const botoes = document.querySelectorAll(".conteudo-principal__secao button");
+    const botoes = document.querySelectorAll(".cont-principal button");
     botoes.forEach(botao => {
         botao.addEventListener("click", function() {
             const contador = this.querySelector("span");
@@ -266,3 +266,5 @@ button.curtido {
     
 </body>
 </html>
+
+
