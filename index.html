@@ -101,6 +101,43 @@ button.curtido {
             text-align: justify;
         }
 
+          .player {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background-color: var(--cor-fundo);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid #2a2a2e;
+        }
+
+        .btn-audio {
+            background-color: var(--cor-destaque);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: var(--fonte-titulos);
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-audio:hover {
+            background-color: #c53030;
+        }
+
+        .tempo {
+            color: var(--cor-subtitulo);
+            font-family: var(--fonte-textos);
+            font-size: 0.9rem;
+        }
+
   
         .secao__texto strong {
             color: var(--cor-destaque);
@@ -160,9 +197,15 @@ button.curtido {
              <section class="conteudo-principal__secao">
             <h2 class="secao__titulo">Participação do brasil na Guerra</h2>
               <img src="brasil_guerra.jpg" alt="Soldados brasileiros" width="600" height="400" style="max-width: 100%; height: auto;">
-                 <audio controls>
-  <source src="PTT-20260817-WA0022.opus" type="audio/ogg; codecs=opus">
+                   <div class="player">
+                <audio id="Audio">
+              <source src="PTT-20260817-WA0022.opus" type="audio/ogg; codecs=opus">
                  </audio>
+                <button class="btn-audio" id="btnTocar">
+                    ▶ Reproduzir Relato
+                </button>
+                <span class="tempo" id="tempoAudio">0:00</span>
+                   </div>
            <button>👍<span>0</span></button>
              </section>
 
@@ -187,6 +230,37 @@ button.curtido {
                 contador.textContent = valorAtual + 1;
             }
         });
+    });
+         const audio = document.getElementById('Audio');
+    const btnTocar = document.getElementById('btnTocar');
+    const tempoAudio = document.getElementById('tempoAudio');
+
+    btnTocar.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play();
+            btnTocar.innerHTML = '⏸ Pausar Relato';
+        } else {
+            audio.pause();
+            btnTocar.innerHTML = '▶ Reproduzir Relato';
+        }
+    });
+
+  
+    audio.addEventListener('timeupdate', function() {
+        let minutos = Math.floor(audio.currentTime / 60);
+        let segundos = Math.floor(audio.currentTime % 60);
+        
+     
+        if (segundos < 10) {
+            segundos = '0' + segundos;
+        }
+        
+        tempoAudio.textContent = minutos + ':' + segundos;
+    });
+
+    audio.addEventListener('ended', function() {
+        btnTocar.innerHTML = '▶ Reproduzir Relato';
+        tempoAudio.textContent = '0:00';
     });
 </script>
     
